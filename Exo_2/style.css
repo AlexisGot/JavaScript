@@ -1,0 +1,25 @@
+.view{
+    display: flex;
+    margin: 0 auto;
+}
+
+aside{
+    background-color: bisque;
+    padding:  1rem 4rem 10rem 4rem;
+    border-radius: 8px;
+    position: fixed;
+    right: 1rem;
+    top: 8rem;
+}
+
+h1{
+    text-align: center;
+}
+
+.leftDiv{
+    margin: 0 25rem 0 1.5rem;
+}
+
+h2{
+    text-transform: uppercase;
+}

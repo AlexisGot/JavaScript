@@ -1,0 +1,47 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    background-color: rgb(121, 40, 121);
+    nav{
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        color: white;
+        max-width: 1200px;
+        align-items: center;
+        padding: 0 1rem;
+
+        .logo{
+            padding: 2rem 1rem;
+        }
+
+        ul{
+            display: flex;
+            justify-content: flex-end;
+        }
+        
+        li{
+            list-style: none;
+            padding: 2rem 1rem;
+        }
+
+        a{
+            color: white;
+            text-decoration: none;
+            padding: 2rem 1rem;
+        }
+    }
+}
+
+
+
+@media screen and (max-width: 1024px){
+    header{
+        nav{
+            ul{
+        display: none;
+    }}
+}}
