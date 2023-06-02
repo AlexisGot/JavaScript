@@ -1,0 +1,154 @@
+* {
+    padding: 0;
+    margin: 0;
+
+}
+
+html {
+    font-size: 18px;
+    font-family: Calibri;
+}
+
+header {
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.2);
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1500px;
+        margin: auto;
+    }
+
+    #logo {
+        width: 75px;
+        height: 75px;
+    }
+
+    ul {
+        display: flex;
+        list-style: none;
+
+        a {
+            text-decoration: none;
+            color: #5F5F5F;
+            padding: 2rem;
+            display: block;
+        }
+    }
+}
+
+main {
+    letter-spacing: 0.05rem;
+
+    section {
+        display: flex;
+        max-width: 1500px;
+        margin: auto;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        div {
+            display: flex;
+            flex-direction: column;
+            width: 33%;
+            box-sizing: border-box;
+            padding: 1.50rem 1.50rem 1.50rem 1.50rem;
+        }
+    }
+
+    h1 {
+        text-align: center;
+        margin: 4rem 2rem 3rem 2rem;
+        font-size: 3.375rem;
+    }
+
+    h2 {
+        padding: 2rem 0 2rem 0;
+        text-transform: uppercase;
+        font-size: 2rem;
+    }
+
+    img {
+        width: 100%;
+        object-fit: cover;
+    }
+}
+
+footer {
+    box-shadow: 0px -1px 4px rgba(0, 0, 0, 0.2);
+
+    p {
+        padding: 2rem;
+        text-align: center;
+    }
+}
+
+
+@media screen and (max-width : 1024px) {
+    header {
+        nav {
+            ul {
+                display: none;
+            }
+            button {
+                width: 50px;
+                height: 25px;
+                position: absolute;
+                right: 1rem;
+                top: 1.25rem;
+                border: none;
+                border-top: 2px solid black;
+                border-bottom: 2px solid black;
+                background: transparent;
+            }
+            button::before, button::after{
+                content: "";
+                background-color: black;
+                width: 100%;
+                height: 2px;
+                right: 0;
+                position: absolute;
+            }
+            .open{
+                    display: flex;
+                    flex-direction: column;
+                    text-align: center;
+            }
+            .active{
+                border: none;
+            }
+            .active::before{
+                transform: rotateZ(45deg);
+            }
+            .active::after{
+                transform: rotateZ(-45deg);
+            }
+        }
+    }
+
+    main {
+        section {
+            justify-content: flex-start;
+
+            div {
+                width: 50%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    main {
+        h1 {
+            margin: 4rem 0rem 3rem 0rem;
+        }
+
+        section {
+            div {
+                width: 100%;
+                padding: 1.50rem 1.50rem 1.50rem 1.50rem;
+            }
+        }
+    }
+}

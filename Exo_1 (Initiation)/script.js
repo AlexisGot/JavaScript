@@ -58,17 +58,28 @@ btn.addEventListener("click", () => {
 
 })
 
-let flèche = document.querySelector("#flèche")
+// Sélectionner l'élément avec l'ID "flèche"
+let flèche = document.querySelector("#flèche");
+
+// Déclarer une variable pour stocker la dernière position de défilement
 var lastScrollPosition = 0;
-window.addEventListener("scroll", ()=>{
+
+// Ajouter un écouteur d'événement "scroll" à la fenêtre
+window.addEventListener("scroll", () => {
+    // Mettre à jour la valeur de la dernière position de défilement avec la position actuelle du défilement vertical
     lastScrollPosition = window.scrollY;
-    console.log(lastScrollPosition);
-    if (lastScrollPosition > 100){
-        flèche.setAttribute("id", "flèche2")
-    }else if(lastScrollPosition < 99){
-        flèche.setAttribute("id", "flèche")
+    console.log(lastScrollPosition); // Afficher la dernière position de défilement dans la console
+    
+    // Vérifier si la dernière position de défilement est supérieure à 100
+    if (lastScrollPosition > 100) {
+        // Si oui, définir l'attribut "id" de l'élément "flèche" sur "flèche2"
+        flèche.setAttribute("id", "flèche2");
+    } else if (lastScrollPosition < 99) {
+        // Sinon, si la dernière position de défilement est inférieure à 99
+        // Définir l'attribut "id" de l'élément "flèche" sur "flèche"
+        flèche.setAttribute("id", "flèche");
     }
-})
+});
 
 
 

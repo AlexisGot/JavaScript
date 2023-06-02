@@ -1,9 +1,6 @@
 // Crée un nouvel élément bouton
 let burgerIcon = document.createElement("button");
 
-// Attribue l'identifiant "burger" à l'élément bouton
-burgerIcon.id = "burger";
-
 // Sélectionne l'élément <nav> existant dans le document
 let nav = document.querySelector("nav");
 
@@ -49,4 +46,5 @@ window.addEventListener("load", () => {
 burgerIcon.addEventListener("click", () => {
     // Ajoute ou supprime la classe "open" de l'élément ul
     ul.classList.toggle("open");
+    burgerIcon.classList.toggle("active");
 });
