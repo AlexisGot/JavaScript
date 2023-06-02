@@ -1,0 +1,59 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  
+  header {
+    background-color: rgb(221, 15, 221);
+  }
+  header nav {
+    margin: 0 auto;
+    justify-content: space-between;
+    color: white;
+    max-width: 1200px;
+    align-items: center;
+    padding: 0 1rem;
+  }
+  header nav .logo {
+    padding: 2rem 1rem;
+    display: block;
+  }
+  header nav ul {
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+  }
+  header nav a {
+    color: white;
+    text-decoration: none;
+    padding: 2rem 1rem;
+    display: block;
+  }
+
+  a:hover{
+    background-color: orange;
+    color: black;
+  }
+
+  .open{
+    display: flex;
+    flex-direction: column
+  }
+
+  @media screen and (max-width: 1024px) {
+    header nav ul {
+      display: none;
+    }
+
+    header nav{
+      position: relative;
+    }
+
+    #burger{
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        right: 0.50rem;
+        top: 1rem;
+    }
+  }
