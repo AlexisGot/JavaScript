@@ -8,6 +8,34 @@ html {
   font-family: Calibri;
 }
 
+#voile {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+#modale {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 1rem;
+  border-radius: 12px;
+}
+
+#close {
+  position: fixed;
+  top: 0;
+  right: 0;
+  background: transparent;
+  border: none;
+  padding: 1rem;
+}
+
 header {
   box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.2);
 }
@@ -50,6 +78,16 @@ main section div {
   box-sizing: border-box;
   padding: 1.5rem 1.5rem 1.5rem 1.5rem;
 }
+main section div .img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  padding: 0;
+}
+main section div .loupe {
+  width: 20px;
+  height: 20px;
+}
 main h1 {
   text-align: center;
   margin: 4rem 2rem 3rem 2rem;
@@ -59,11 +97,6 @@ main h2 {
   padding: 2rem 0 2rem 0;
   text-transform: uppercase;
   font-size: 2rem;
-}
-main img {
-  width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
 }
 
 footer {
