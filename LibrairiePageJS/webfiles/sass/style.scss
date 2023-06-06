@@ -9,7 +9,7 @@ html {
     font-family: Calibri;
 }
 
-#voile{
+#voile {
     position: fixed;
     top: 0;
     right: 0;
@@ -18,7 +18,7 @@ html {
     background-color: rgba(0, 0, 0, 0.50);
 }
 
-#modale{
+#modale {
     position: fixed;
     top: 50%;
     left: 50%;
@@ -28,13 +28,21 @@ html {
     border-radius: 12px;
 }
 
-#close{
+#close {
     position: fixed;
     top: 0;
     right: 0;
     background: transparent;
     border: none;
     padding: 1rem;
+}
+
+#btnLeft{
+    left: 0;
+}
+
+#btnRight{
+    right: 0;
 }
 
 header {
@@ -83,13 +91,13 @@ main {
             box-sizing: border-box;
             padding: 1.50rem 1.50rem 1.50rem 1.50rem;
 
-            .img{
+            .img {
                 width: 100%;
                 object-fit: cover;
                 padding: 0;
             }
 
-            .loupe{
+            .loupe {
                 width: 20px;
                 height: 20px;
             }
@@ -122,9 +130,12 @@ footer {
 @media screen and (max-width : 1024px) {
     header {
         nav {
+            flex-direction: column;
+
             ul {
                 display: none;
             }
+
             button {
                 width: 50px;
                 height: 25px;
@@ -136,7 +147,9 @@ footer {
                 border-bottom: 2px solid black;
                 background: transparent;
             }
-            button::before, button::after{
+
+            button::before,
+            button::after {
                 content: "";
                 background-color: black;
                 width: 100%;
@@ -144,18 +157,22 @@ footer {
                 right: 0;
                 position: absolute;
             }
-            .open{
-                    display: flex;
-                    flex-direction: column;
-                    text-align: center;
+
+            .open {
+                display: flex;
+                flex-direction: column;
+                text-align: center;
             }
-            .active{
+
+            .active {
                 border: none;
             }
-            .active::before{
+
+            .active::before {
                 transform: rotateZ(45deg);
             }
-            .active::after{
+
+            .active::after {
                 transform: rotateZ(-45deg);
             }
         }
@@ -177,6 +194,7 @@ footer {
         h1 {
             margin: 4rem 0rem 3rem 0rem;
         }
+
 
         section {
             div {

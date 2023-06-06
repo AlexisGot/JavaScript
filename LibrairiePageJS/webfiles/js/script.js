@@ -51,6 +51,8 @@ burgerIcon.addEventListener("click", () => {
 })
 
 //- Modale -
+let imgs = document.querySelectorAll(".imgBook");
+let tableauImg = Array.from(imgs).map(element => element.getAttribute("src"))
 // Sélectionne tous les éléments de la page avec la classe HTML "loupe" et les stocke dans la variable "loupes"
 let loupes = document.querySelectorAll(".loupe");
 
@@ -71,33 +73,68 @@ loupes.forEach(loupe => {
         let modale = document.createElement("div");
         modale.id = "modale"; // Définit l'ID de l'élément "modale" comme "modale"
 
+        let btnLeft = document.createElement("button")
+        btnLeft.id = "btnLeft"
+        btnLeft.textContent = "<"
+
+        let btnRight = document.createElement("button")
+        btnRight.id = "btnRight"
+        btnRight.textContent = ">"
+
+
         // Crée un nouvel élément de type "img" et le stocke dans la variable "img"
         let img = document.createElement("img");
 
         // Récupère l'attribut "src" de l'élément "img" parent de l'élément "loupe" actuel, et le stocke dans la variable "srcImg"
         let srcImg = loupe.parentNode.querySelector("img").getAttribute("src");
 
+        let keyImg = tableauImg.indexOf(srcImg)
+        console.log(keyImg)
+
+        btnLeft.setAttribute("data-prev", keyImg - 1)
+        btnRight.setAttribute("data-next", keyImg + 1)
+
+
         // Définit l'attribut "src" de l'élément "img" nouvellement créé avec la valeur de "srcImg"
         img.setAttribute("src", srcImg);
 
+        btnLeft.addEventListener("click", () => {
+            let value= btnLeft.getAttribute("data-prev")
+            let dataL = tableauImg[value]
+            img.setAttribute("src", dataL)
+            btnLeft.setAttribute("data-prev", value -1)
+            btnRight.setAttribute("data-next", value -1)
+
         
+        })
+
+
+        btnRight.addEventListener("click", () => {
+            let value = btnRight.getAttribute("data-next")
+            let dataN = tableauImg[value]
+            img.setAttribute("src", dataN)
+            btnLeft.setAttribute("data-prev", value +1)
+            btnRight.setAttribute("data-next", value +1)
+        
+        })
+
         // Crée un nouvel élément de type "button" et le stocke dans la variable "close"
         let close = document.createElement("button");
-        
+
         close.id = "close"
-        
+
         // Définit le contenu textuel du bouton "close" comme "X"
         close.textContent = "X";
-        
+
         // Ajoute l'élément "voile" en tant qu'enfant du corps du document
         document.body.appendChild(voile);
-        
+
         // Ajoute l'élément "modale" en tant qu'enfant de l'élément "voile"
         voile.appendChild(modale);
-        
+
         // Ajoute les éléments "close" et "img" en tant qu'enfants de l'élément "modale"
-        modale.append(close, img);
-        
+        modale.append(close, btnLeft, img, btnRight);
+
         let datas = loupe.dataset;
         for (key in datas) {
             let info = document.createElement("h2")
@@ -115,5 +152,8 @@ loupes.forEach(loupe => {
         });
     });
 });
+
+
+
 
 
